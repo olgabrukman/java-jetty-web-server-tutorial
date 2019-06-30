@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+    <welcome-file-list>
+      <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+
+    <!--registering where to find jersey classes -->
+    <servlet>
+        <servlet-name>jersey</servlet-name>
+        <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+        <!-- the packages where the jersey classes sit -->
+        <init-param>
+            <param-name>com.sun.jersey.config.property.packages</param-name>
+            <param-value>avdw</param-value>
+        </init-param>
+        <!-- make jersey to work with POJO conversion to JSON -->
+        <init-param>
+            <param-name>com.sun.jersey.api.json.POJOMappingFeature</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </servlet>
+    <!--  map the jersey container to a context path, enabling us to access it -->
+    <servlet-mapping>
+        <servlet-name>jersey</servlet-name>
+        <url-pattern>/jersey/*</url-pattern>
+    </servlet-mapping>
+
+</web-app>
