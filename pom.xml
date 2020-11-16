@@ -20,7 +20,7 @@
             <groupId>org.eclipse.jetty</groupId>
             <!--jetty-webapp is the module I included to allow me to configure jetty with a web.xml file, which should be easier to migrate between servers -->
             <artifactId>jetty-webapp</artifactId>
-            <version>8.0.4.v20111024</version>
+            <version>9.4.34.v20201102</version>
         </dependency>
 
         <!--Jersey -->
